@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+table
+{
+padding:1px; width:25%;
+text-align:center;background-color:pink;border-collapse:collapse;box-shadow:2px 2px 3px #000000;border-radius:50px;
+}
+table{margin:auto;}input{text-align:left;}
+th{color:purple; font-size:40px;text-align:center;}
+body
+{
+background-image:url("https://image.freepik.com/free-photo/top-view-business-office-desk-background-pen-letter-flower-clock-clip-calculator-wooden-table-background-with-copy-space_1921-25.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+}
+ul {
+  list-style-type: none;
+  text-align:center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ background-color:#FFD700;
+}
+
+li {
+  float:center;
+  display:inline-block;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size:20px;
+}
+</style>
+<script type="text/javascript">
+function calc(clicked_id)
+{
+var val1=parseFloat(document.getElementById("value1").value);
+var val2=parseFloat(document.getElementById("value2").value);
+if(isNaN(val1)||isNaN(val2))
+alert("ENTER VALID NUMBER");
+else if(clicked_id=="add") document.getElementById("answer").value=val1+val2;
+else if(clicked_id=="sub") document.getElementById("answer").value=val1-val2;
+else if(clicked_id=="mul") document.getElementById("answer").value=val1*val2;
+else if(clicked_id=="div") document.getElementById("answer").value=val1/val2;
+else if(clicked_id=="mod") document.getElementById("answer").value=val1%val2;
+else if(clicked_id=="per") document.getElementById("answer").value=(val1/val2)*100;
+else if(clicked_id=="pow") document.getElementById("answer").value=Math.pow(val1,val2);
+else if(clicked_id=="sqrt") document.getElementById("answer").value=Math.sqrt(val1+val2);
+else if(clicked_id=="cbrt") document.getElementById("answer").value=Math.cbrt(val1+val2);
+else if(clicked_id=="log2") document.getElementById("answer").value=Math.log2(val1*val2);
+else if(clicked_id=="log10") document.getElementById("answer").value=Math.log10(val1*val2);
+else if(clicked_id=="exp") document.getElementById("answer").value=Math.exp(val1);
+}
+function cls()
+{
+value1.value="0";
+value2.value="0";
+answer.value="";
+}
+</script>
+</head>
+<body>
+<ul>
+  <li><a href="code1.html">Home</a></li>
+  <li><a href="code2.html">About</a></li>
+</ul>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">;
+<table height="500">
+<div class="container">
+<tr><th colspan="4"><em>SIMPLE CALCULATOR</em></th></tr>
+<tr><td>value1</td><td><input type="text" id="value1" value="0"/></td>
+<td>value2</td><td><input type="text" id="value2" value="0"/></td></tr>
+<tr><td><input button type="button" class="btn btn-primary active" value="Addition" id="add" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-danger active" value="Subtraction" id="sub" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-success" value="Multiplication" id="mul" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-info" value="Division" id="div" onclick="calc(this.id)"/></button></td></tr>
+<tr><td><input button type="button" class="btn btn-info" value="  Percentage  " id="per" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-success active" value="Modulus" id="mod" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-primary active" value="Square root" id="sqrt" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-danger" value="Cube root" id="cbrt" onclick="calc(this.id)"/></button></td></tr>
+<tr><td><input button type="button" class="btn btn-success" value="Power" id="pow" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-primary" value="Exponential" id="exp" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-danger active" value="Logarithm-2" id="log2" onclick="calc(this.id)"/></button></td>
+<td><input button type="button" class="btn btn-info active " value="Logarithm-10" id="log10" onclick="calc(this.id)"/></button></td></tr>
+<tr><td><b>Answer:</b></td><td><input type="text" id="answer" value="" disabled/></td>
+<td colspan="2"><input button type="button" class="btn btn-warning active" value="CLEAR ALL" onclick="cls()"/></button></td></tr>
+</table>
+</div>
+</body>
+</html>
